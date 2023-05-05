@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <title>SHEOUT</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link media='screen' rel='stylesheet' th:href='@{/css/style.css}' type='text/css'/>
+</head>
+<body>
+<header>
+    <div class="d-flex justify-content-center">
+        <a href="">
+            <img alt="SHEOUT logo" th:src="@{/images/LOGO_SHEOUT.png}"/>
+        </a>
+    </div>
+</header>
+<br/><br/>
+<!-- Header - End -->
+<!-- Navbar - Begin -->
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">SHEOUT</a>
+    <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- Navbar - End -->
+
+<div>
+    <h1>YOUR ORDERS</h1>
+    <header>Old Orders</header>
+</div>
+<br/><br/>
+
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+    <tr>
+        <th>Order ID</th>
+        <th>Order Date</th>
+        <th>Item Name</th>
+        <th>Size</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>12345</td>
+        <td>05/10/2022</td>
+        <td>Blue Dress</td>
+        <td>M</td>
+        <td>1</td>
+        <td>$50.00</td>
+        <td>
+            <button class="btn btn-dark btn-primary my-2 my-sm-0" type="button">Order Again</button>
+        </td>
+    </tr>
+    <tr>
+        <td>12346</td>
+        <td>05/15/2022</td>
+        <td>Red Sweater</td>
+        <td>P</td>
+        <td>2</td>
+        <td>$40.00</td>
+        <td>
+            <button class="btn btn-dark btn-primary my-2 my-sm-0" type="button">Order Again</button>
+        </td>
+    </tr>
+    <tr>
+        <td>12347</td>
+        <td>05/20/2022</td>
+        <td>Black Jeans</td>
+        <td>L</td>
+        <td>1</td>
+        <td>$60.00</td>
+        <td>
+            <button class="btn btn-dark btn-primary my-2 my-sm-0" type="button">Order Again</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<div>
+    <button class="btn btn-dark btn-primary" onclick="location.href='clientHome.html'" type="button">Return</button>
+</div>
+
+<!-- Footer - Begin -->
+<footer>
+    <p>&copy; SHEOUT 2023. All rights reserved.</p>
+</footer>
+</body>

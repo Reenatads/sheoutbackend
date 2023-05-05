@@ -1,0 +1,26 @@
+.featured-products {
+    display: flex;
+}
+
+h1 {
+    display: none;
+}
+
+h2 {
+    display: none;
+}
+
+.error-message {
+    display: none;
+}
+
+.add-to-cart-button:hover {
+    background-color: #555;
+}
+
+.social-proof {
+    background-color: #f8f8f8;
+    padding: 50px;
+    text-align: center;
+}
+

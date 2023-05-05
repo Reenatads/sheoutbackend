@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <title>SHEOUT</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link media='screen' rel='stylesheet' th:href='@{/css/style.css}' type='text/css'/>
+</head>
+<body>
+<header>
+    <div class="d-flex justify-content-center">
+        <a href="">
+            <img alt="SHEOUT logo" th:src="@{/images/LOGO_SHEOUT.png}"/>
+        </a>
+    </div>
+</header>
+<br/><br/>
+<!-- Header - End -->
+
+<div>
+    <h1>Client Register</h1>
+
+    <!--        <div  class="error-message">-->
+    <!--           Here goes a success message-->
+    <!--        </div><br>-->
+
+    <div class="container">
+        <form class="form-style" method="post" th:action="@{/public/client/save}" th:object="${client}">
+            <fieldset>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input class="form-control" id="name" name="name" placeholder="Name..." th:field="*{name}"
+                           type="text"/>
+                    <div class="invalid-feedback">
+                        Please enter your name.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cpf">CPF:</label>
+                    <input class="form-control" id="cpf" name="cpf" placeholder="CPF..." th:field="*{cpf}" type="text"/>
+                    <div class="invalid-feedback">
+                        Please enter a valid CPF.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input class="form-control" id="email" name="email" placeholder="E-mail..." th:field="*{email}"
+                           type="email"/>
+                    <div class="invalid-feedback">
+                        Please enter a valid e-mail.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone number:</label>
+                    <input class="form-control" id="phone" name="phone" placeholder="Phone number..." th:field="*{phoneNumber}"
+                           type="tel"/>
+                    <div class="invalid-feedback">
+                        Please enter a valid phone number.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="zipcode">Zip Code:</label>
+                    <input class="form-control" id="zipcode" name="zipcode" placeholder="Zip Code..." th:field="*{zipCode}"
+                           type="text"/>
+                    <div class="invalid-feedback">
+                        Please enter a valid zip code.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input class="form-control" id="password" name="password" placeholder="Password..." th:field="*{password}"
+                           type="password"/>
+                    <div class="invalid-feedback">
+                        Please enter a password.
+                    </div>
+                </div>
+
+                <button class="btn btn-dark btn-primary" type="submit">Register</button>
+                <a class="btn btn-secondary return-button" href="#" onclick="location.href='index.html'">Return</a>
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- Footer - Begin -->
+    <br/><br/>
+    <footer class="bg-dark text-white py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; SHEOUT 2023. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

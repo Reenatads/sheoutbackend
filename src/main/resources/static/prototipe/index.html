@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <title>SHEOUT</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link media='screen' rel='stylesheet' th:href='@{/css/style.css}' type='text/css'/>
+</head>
+<body>
+<header>
+    <div class="d-flex justify-content-center">
+        <a href="">
+            <img alt="SHEOUT logo" th:src="@{/images/LOGO_SHEOUT.png}"/>
+        </a>
+    </div>
+</header>
+<br/><br/>
+<!-- Header - End -->
+<!-- Navbar - Begin -->
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">SHEOUT</a>
+    <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-target="#navbarNav" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" placeholder="Email" type="email">
+                    <input class="form-control mr-sm-2" placeholder="Password" type="password">
+                    <a class="btn btn-dark btn-primary my-2 my-sm-0" href="#" onclick="location.href='clientHome.html'"
+                       type="submit">Log In</a>
+                    <!--                    <a href="#" class="btn  btn-link text-dark my-2 my-sm-0 ml-3"  onclick="location.href='clientRegister.html'">Sign Up</a>-->
+                    <form method="get">
+                        <button class="btn  btn-link text-dark my-2 my-sm-0 ml-3" th:attr="formaction=@{/public/client/new}"
+                                type="submit">Sign Up
+                        </button>
+                    </form>
+                </form>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="badge badge-pill badge-danger">0</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- Navbar - End -->
+<!-- Container - products -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Filters
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <h5>Order by price</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" id="ascending" name="order-price" type="radio"
+                                   value="ascending">
+                            <label class="form-check-label" for="ascending">
+                                Ascending
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="descending" name="order-price" type="radio"
+                                   value="descending">
+                            <label class="form-check-label" for="descending">
+                                Descending
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <h5>Category</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" id="dress" type="checkbox" value="">
+                            <label class="form-check-label" for="dress">
+                                Dress
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="accessories" type="checkbox" value="">
+                            <label class="form-check-label" for="accessories">
+                                Accessories
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="blouses" type="checkbox" value="">
+                            <label class="form-check-label" for="blouses">
+                                Blouses
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Products -->
+        <div class="col-md-9">
+            <div class="row align-items">
+                <div class="col-md-4 col-4" style="margin-top: 20px;">
+                    <div class="card">
+                        <img alt="Product 1" class="card-img-top" th:src="@{/images/blouse1.png}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Princess flower blouse</h5>
+                            <p class="card-text">$50</p>
+                            <a class="btn btn-dark btn-primary" href="#">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-4" style="margin-top: 20px;">
+                    <div class="card">
+                        <img alt="Product 1" class="card-img-top" th:src="@{/images/blouse1.png}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Princess flower blouse</h5>
+                            <p class="card-text">$50</p>
+                            <a class="btn btn-dark btn-primary" href="#">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-4" style="margin-top: 20px;">
+                    <div class="card">
+                        <img alt="Product 1" class="card-img-top" th:src="@{/images/blouse1.png}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Black elegant blouse</h5>
+                            <p class="card-text">$50</p>
+                            <a class="btn btn-dark btn-primary" href="#">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-4" style="margin-top: 20px;">
+                    <div class="card">
+                        <img alt="Product 1" class="card-img-top" th:src="@{/images/blouse1.png}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Black elegant blouse</h5>
+                            <p class="card-text">$50</p>
+                            <a class="btn btn-dark btn-primary" href="#">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-4" style="margin-top: 20px;">
+                    <div class="card">
+                        <img alt="Product 1" class="card-img-top" th:src="@{/images/blouse1.png}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Black elegant blouse</h5>
+                            <p class="card-text">$50</p>
+                            <a class="btn btn-dark btn-primary" href="#">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-4" style="margin-top: 20px;">
+                    <div class="card">
+                        <img alt="Product 1" class="card-img-top" th:src="@{/images/blouse1.png}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Black elegant blouse</h5>
+                            <p class="card-text">$50</p>
+                            <a class="btn btn-dark btn-primary" href="#">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br/><br/>
+<section class="social-proof">
+    <h2>Social Proof</h2>
+    <div class="testimonial">
+        <p>"I love SHEOUT! Their clothes are always so unique and stylish."</p>
+        <cite> - Jane Doe</cite>
+    </div>
+    <div class="testimonial">
+        <p>"I've been shopping at SHEOUT for years and they never disappoint."</p>
+        <cite> - Rebecca Smith</cite>
+    </div>
+</section>
+<footer class="bg-dark text-white py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>&copy; SHEOUT 2023. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
