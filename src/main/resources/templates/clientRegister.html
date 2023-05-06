@@ -25,8 +25,9 @@
     <!--        </div><br>-->
 
     <div class="container">
-        <form method="post" th:object="${client}" th:action="@{/public/client/save}" class="form-style"   >
+        <form method="post" th:object="${client}" th:action="${!editMode} ? @{/public/client/save} : @{/client/save}" class="form-style"   >
             <fieldset>
+                <input type="hidden" th:field="*{id}"/>
 <!--                <div class="form-group">-->
                     <label for="name">Name:</label><br />
                     <input class="form-control" id="name" name="name" placeholder="Name..." th:field="*{name}"
@@ -86,12 +87,13 @@
                     <br /><br />
 <!--                </div>-->
 
-                <input type="submit" class="btn btn-dark btn-primary" value="Register"/>
+                <input type="submit" class="btn btn-dark btn-primary" th:value="${editMode} ? 'Register' : 'Update'"/>
                 <a class="btn btn-secondary return-button" href="#" onclick="location.href='index.html'">Return</a>
             </fieldset>
         </form>
 
     </div>
+</div>
 
     <!-- Footer - Begin -->
     <br/><br/>
@@ -106,7 +108,7 @@
     </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.3/dist/umd/popper.min.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.3/dist/umd/popper.min.js"/>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

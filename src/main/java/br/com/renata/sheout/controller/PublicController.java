@@ -19,12 +19,14 @@ public class PublicController {
     @GetMapping("/client/new")
     public String newClient(Model model) {
         model.addAttribute("client", new Client());
+        ControllerHelper.setEditMode(model, false);
         return "clientRegister";
     }
 
     @PostMapping(path = "/client/save")
-    public String saveClient(@ModelAttribute("client") Client client) {
+    public String saveClient(@ModelAttribute("client") Client client, Model model) {
         clientService.saveClient(client);
+        ControllerHelper.setEditMode(model, true);
         return "clientRegister";
     }
 }
