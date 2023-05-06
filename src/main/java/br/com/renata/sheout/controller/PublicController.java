@@ -1,6 +1,6 @@
 package br.com.renata.sheout.controller;
 
-import br.com.renata.sheout.application.ClientService;
+import br.com.renata.sheout.application.service.ClientService;
 import br.com.renata.sheout.domain.client.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

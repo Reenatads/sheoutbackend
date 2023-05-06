@@ -1,4 +1,4 @@
-package br.com.renata.sheout.application;
+package br.com.renata.sheout.application.service;
 
 import br.com.renata.sheout.domain.client.Client;
 import br.com.renata.sheout.domain.client.ClientRepository;
