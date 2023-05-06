@@ -23,7 +23,7 @@ public class PublicController {
     }
 
     @PostMapping(path = "/client/save")
-    public String saveClint(@ModelAttribute("client") Client client) {
+    public String saveClient(@ModelAttribute("client") Client client) {
         clientService.saveClient(client);
         return "clientRegister";
     }
