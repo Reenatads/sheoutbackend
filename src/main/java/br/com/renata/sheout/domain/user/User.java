@@ -1,5 +1,6 @@
 package br.com.renata.sheout.domain.user;
 
+import br.com.renata.sheout.util.StringUtils;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,4 +42,8 @@ public class User implements Serializable {
     @Pattern(regexp = "[0-9]{10,11}", message = "Invalid phone number format")
     @Column(length = 11, nullable = false)
     private String phoneNumber;
+
+    public void encryptPassword(){
+        this.password = StringUtils.encrypt(this.password);
+    }
 }

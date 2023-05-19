@@ -18,10 +18,10 @@
 <br/><br/>
 <!-- Header - End -->
 <div>
-    <h1>Client Register</h1>
+    <h1>Store Register</h1>
 
     <div class="container">
-        <form method="post" th:object="${client}" th:action="${!editMode} ? @{/public/client/save} : @{/client/save}" class="form-style"   >
+        <form method="post" class="form-style" th:object="${store}" th:action="${editMode} ? @{/public/store/save} : @{/public/store/save}"  enctype="multipart/form-data" >
             <fieldset>
                 <input type="hidden" th:field="*{id}"/>
                 <label for="name">Name:</label><br />
@@ -30,8 +30,8 @@
                     Please enter a valid name.
                 </div><br/>
 
-                    <label for="cpf">CPF:</label>
-                    <input class="form-control" id="cpf" name="cpf" placeholder="CPF..." th:field="*{cpf}" type="text" required oninvalid="this.setCustomValidity('Please enter a valid cpf.')" onkeydown="return isNumberKey(event);"/>
+                    <label for="cpf">CNPJ:</label>
+                    <input class="form-control" id="cpf" name="cpf" placeholder="CNPJ..." th:field="*{cnpj}" type="text" required oninvalid="this.setCustomValidity('Please enter a valid cpf.')" onkeydown="return isNumberKey(event);"/>
                     <div class="invalid-feedback">
                         Please enter a valid CPF.
                     </div><br />
@@ -48,11 +48,35 @@
                         Please enter a valid phone number.
                     </div><br />
 
-                    <label for="zipcode">Zip Code:</label>
-                    <input class="form-control" id="zipcode" name="zipcode" placeholder="Zip Code..." th:field="*{zipCode}" type="text" required oninvalid="this.setCustomValidity('Please enter a valid zip code.')" onkeydown="return isNumberKey(event);"/>
+                    <label for="deliveryTax">Delivery Tax:</label>
+                    <input class="form-control" id="deliveryTax" name="deliveryTax" placeholder="Delivery Tax..." th:field="*{deliveryTax}" type="text" required oninvalid="this.setCustomValidity('Please enter a valid delivery tax.')" onkeydown="return isNumberKey(event);"/>
                     <div class="invalid-feedback">
-                        Please enter a valid zip code.
+                        Please enter a valid delivery tax.
                     </div><br />
+
+                    <label for="deliveryTime">Delivery Time:</label>
+                    <input class="form-control" id="deliveryTime" name="deliveryTime" placeholder="Delivery Time..." th:field="*{deliveryTime}" type="text" required oninvalid="this.setCustomValidity('Please enter a valid delivery tax.')" onkeydown="return isNumberKey(event);"/>
+                    <div class="invalid-feedback">
+                        Please enter a valid delivery time.
+                    </div><br />
+
+                    <div th:if="${!editMode}">
+                        <label for="logo">Logo: </label><br />
+                        <input type="file" id="logo" name="logo" placeholder="Select File..." th:field="*{logoFile}" th:classappend="${#fields.hasErrors('logoFile')} ? 'inputError' : ''"/>
+                        <div class="invalid-feedback" th:if="${#fields.hasErrors('logoFile')}">
+                            Please select a valid logo file.
+                        </div>
+                        <br /><br />
+                    </div>
+
+                    <label for="category">Store category: </label><br />
+                    <select name="category" id="category" multiple="multiple" th:field="*{categories}" style="height: 90px;" th:classappend="${#fields.hasErrors('categories')} ? 'inputError' : ''">
+                        <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+                    </select><br />
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('categories')}">
+                        Please select a category.
+                    </div>
+                    <br /><br />
 
 
                     <div th:if="${!editMode}">
@@ -64,6 +88,7 @@
                         <br /><br />
                     </div>
                 <input type="hidden" name="password" value="*" th:if="${editMode}" />
+
                 <input type="submit" class="btn btn-dark btn-primary" th:value="${!editMode} ? 'Register' : 'Update'"/>
                 <a class="btn btn-secondary return-button" href="#" onclick="location.href='index.html'">Return</a>
             </fieldset>

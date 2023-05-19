@@ -21,6 +21,10 @@ public class Client extends User {
 
     @NotBlank( message = "ZipCode field can't be empty")
     @Pattern(regexp = "[0-9] {8}", message = "Invalid ZipCode format")
-    @Column(length = 8)
+    @Column(length = 8, nullable = false)
     private String zipCode;
+
+    public String getFormattedCep() {
+        return zipCode.substring(0, 5) + "-" + zipCode.substring(5);
+    }
 }

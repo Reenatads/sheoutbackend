@@ -1,4 +1,4 @@
-package br.com.renata.sheout.controller;
+package br.com.renata.sheout.infrastructure.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
